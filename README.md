@@ -13,9 +13,9 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
-       width="300">
+       width="600">
 </a>
----
+
 
 ## Legal Disclaimer
 
