@@ -18,6 +18,7 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 
 ---
 
+### Dashboard
 
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_en.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_en.jpg" 
@@ -25,6 +26,13 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
        width="900">
 </a>
 
+### MITRE Matrix
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_en.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_en.jpg" 
+       alt="Image" 
+       width="900">
+</a>
 
 ## Legal Disclaimer
 
