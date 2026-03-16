@@ -1,10 +1,10 @@
 ########################################################################
-#                                                                      #
-#        PowerAudit_3.0.ps1 / Releve de configuration Windows         #
-#                                                                      #
-#        Licence : Apache 2                                            #
-#        Auteurs : BlueTeam - v3.0                                     #
-#                                                                      #
+#                                                                      
+#        PowerAudit_3.0.ps1 / Releve de configuration Windows         
+#                                                                      
+#        Licence : Apache 2                                            
+#        Auteurs : Anadema - v3.0                                     
+#                                                                      
 ########################################################################
 
 #Requires -Version 5.0
