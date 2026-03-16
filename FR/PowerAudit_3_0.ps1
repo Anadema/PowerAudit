@@ -2656,7 +2656,7 @@ function Generate-RemediationPlan {
             "Le compte Administrateur integre est la cible prioritaire des attaques par brute-force." `
             'Rename-LocalUser -Name "Administrateur" -NewName "Admin_$(Get-Random -Max 9999)"
 Disable-LocalUser -Name "Administrateur"' `
-            "CIS Benchmark 2.3.1 / ANSSI R30" `
+            "CIS Benchmark 2. / ANSSI R30" `
             "licpt"
     }
 
@@ -2665,7 +2665,7 @@ Disable-LocalUser -Name "Administrateur"' `
             "Le compte Invite permet un acces authentifie sans credential connu." `
             'Disable-LocalUser -Name "Invite"
 Disable-LocalUser -Name "Guest"' `
-            "CIS Benchmark 2.3.1" `
+            "CIS Benchmark 2." `
             "licpt"
     }
 
@@ -4384,7 +4384,7 @@ function Show-Banner {
     Write-Host ""
     Write-Host "                          P O W E R A U D I T" -ForegroundColor White
     Write-Host ""
-    Write-Host "              A U D I T   --   v 3 . 1   --   B l u e T e a m" -ForegroundColor DarkCyan
+    Write-Host "              A U D I T   --   v 3 . 0   --   B l u e T e a m" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  ======================================================================" -ForegroundColor DarkCyan
     Write-Host ""
