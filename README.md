@@ -1,4 +1,4 @@
-# PowerAudit 3.1
+# PowerAudit 3.0
 
 > **Windows configuration audit and security review tool — for ethical and defensive use only.**
 
@@ -218,4 +218,4 @@ Apache 2.0 — see `LICENSE` file.
 
 ## Authors
 
-BlueTeam — v3.1
+Anadema
