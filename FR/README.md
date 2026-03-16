@@ -218,4 +218,4 @@ Apache 2.0 — voir fichier `LICENSE`.
 
 ## Auteurs
 
-BlueTeam — v3.1
+Anadema
