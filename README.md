@@ -4,10 +4,10 @@
 
 ---
 
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_en.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_en.jpg" 
        alt="Image" 
-       width="400">
+       width="800">
 </a>
 
 ## Objective
