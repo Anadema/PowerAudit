@@ -1,9 +1,9 @@
 ########################################################################
 #                                                                      #
-#        PowerAudit_3.1.ps1 / Windows Configuration Audit         #
+#        PowerAudit_3.0.ps1 / Windows Configuration Audit              #
 #                                                                      #
 #        License : Apache 2                                            #
-#        Authors : BlueTeam - v3.1                                     #
+#        Authors : BlueTeam - v3.0                                     #
 #                                                                      #
 ########################################################################
 
@@ -4376,7 +4376,7 @@ function Show-Banner {
     Write-Host ""
     Write-Host "                          P O W E R A U D I T" -ForegroundColor White
     Write-Host ""
-    Write-Host "              A U D I T   --   v 3 . 1   --   B l u e T e a m" -ForegroundColor DarkCyan
+    Write-Host "              A U D I T   --   v 3 . 0   --   B l u e T e a m" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  ======================================================================" -ForegroundColor DarkCyan
     Write-Host ""
