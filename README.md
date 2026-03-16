@@ -34,6 +34,15 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
        width="900">
 </a>
 
+### Remediation
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Remediation_en.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Remediation_en.jpg" 
+       alt="Image" 
+       width="900">
+</a>
+
+
 ## Legal Disclaimer
 
 > The author of this script **cannot be held responsible** for its use.
