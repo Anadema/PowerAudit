@@ -18,10 +18,28 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 
 ---
 
+# Dashboard
+
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
        width="800">
+</a>
+
+# Matrice Mitre
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_fr.jpgg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_fr.jpg" 
+       alt="Image" 
+       width="500">
+</a>
+
+# Remédiation
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Remediation_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Remediation_fr.jpg" 
+       alt="Image" 
+       width="500">
 </a>
 
 ## Avertissement légal
