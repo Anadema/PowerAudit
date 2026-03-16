@@ -4,10 +4,10 @@
 
 ---
 
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
        alt="Image" 
-       width="800">
+       width="400">
 </a>
 
 ## Objective
@@ -18,6 +18,14 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 
 ---
 
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
+       alt="Image" 
+       width="800">
+</a>
+
+
 ## Legal Disclaimer
 
 > The author of this script **cannot be held responsible** for its use.
@@ -26,12 +34,6 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 > This script contains only **read** commands and does not modify, exfiltrate, or alter any system data.
 
 ---
-
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
-       alt="Image" 
-       width="800">
-</a>
 
 ## Prerequisites
 
