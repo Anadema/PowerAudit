@@ -28,7 +28,7 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 
 ### Matrice Mitre
 
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_fr.jpgg">
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Mitre_fr.jpg" 
        alt="Image" 
        width="800">
