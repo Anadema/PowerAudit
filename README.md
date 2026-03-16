@@ -10,8 +10,8 @@ PowerAudit is a PowerShell script designed for **Blue Team** analysts, system ad
 
 The script contains **no write, modify, or exploitation commands**. It relies exclusively on read-only calls (`Get-*`, `netsh`, `bcdedit`, `wevtutil`, etc.) and does not alter the audited system in any way.
 
-<a href="https://raw.githubusercontent.com/UTILISATEUR/NOM-REPO/main/Image/photo.png">
-  <img src="https://raw.githubusercontent.com/UTILISATEUR/NOM-REPO/main/Image/photo.png" 
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
        width="300">
 </a>
