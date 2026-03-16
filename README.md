@@ -4,18 +4,19 @@
 
 ---
 
-## Objective
-
-PowerAudit is a PowerShell script designed for **Blue Team** analysts, system administrators, and security auditors. It provides a rapid snapshot of a Windows machine's configuration, identifies deviations from security best practices, and generates an interactive HTML report ready for immediate use.
-
-The script contains **no write, modify, or exploitation commands**. It relies exclusively on read-only calls (`Get-*`, `netsh`, `bcdedit`, `wevtutil`, etc.) and does not alter the audited system in any way.
-
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
        width="800">
 </a>
 
+## Objective
+
+PowerAudit is a PowerShell script designed for **Blue Team** analysts, system administrators, and security auditors. It provides a rapid snapshot of a Windows machine's configuration, identifies deviations from security best practices, and generates an interactive HTML report ready for immediate use.
+
+The script contains **no write, modify, or exploitation commands**. It relies exclusively on read-only calls (`Get-*`, `netsh`, `bcdedit`, `wevtutil`, etc.) and does not alter the audited system in any way.
+
+---
 
 ## Legal Disclaimer
 
@@ -25,6 +26,12 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 > This script contains only **read** commands and does not modify, exfiltrate, or alter any system data.
 
 ---
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
+       alt="Image" 
+       width="800">
+</a>
 
 ## Prerequisites
 
