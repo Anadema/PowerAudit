@@ -4,6 +4,12 @@
 
 ---
 
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
+       alt="Image" 
+       width="400">
+</a>
+
 ## Objectif
 
 PowerAudit est un script PowerShell conçu pour les équipes **Blue Team**, les administrateurs système et les auditeurs de sécurité. Il permet de collecter rapidement une photographie complète de la configuration d'une machine Windows, d'identifier les écarts par rapport aux bonnes pratiques de sécurité, et de générer un rapport HTML interactif exploitable immédiatement.
@@ -11,6 +17,12 @@ PowerAudit est un script PowerShell conçu pour les équipes **Blue Team**, les 
 Le script ne contient **aucune commande d'écriture, de modification ou d'exploitation**. Il s'appuie exclusivement sur des appels en lecture seule (`Get-*`, `netsh`, `bcdedit`, `wevtutil`, etc.) et ne modifie en aucun cas le système audité.
 
 ---
+
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
+       alt="Image" 
+       width="400">
+</a>
 
 ## Avertissement légal
 
