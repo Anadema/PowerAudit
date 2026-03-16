@@ -7,7 +7,7 @@
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_en.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_en.jpg" 
        alt="Image" 
-       width="800">
+       width="400">
 </a>
 
 ## Objective
