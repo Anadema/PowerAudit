@@ -13,7 +13,7 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
-       width="600">
+       width="800">
 </a>
 
 
