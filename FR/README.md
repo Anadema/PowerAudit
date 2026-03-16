@@ -7,7 +7,7 @@
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
        alt="Image" 
-       width="400">
+       width="500">
 </a>
 
 ## Objectif
@@ -21,7 +21,7 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
   <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
        alt="Image" 
-       width="400">
+       width="800">
 </a>
 
 ## Avertissement légal
