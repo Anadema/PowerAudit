@@ -4,17 +4,15 @@
 
 ---
 
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" 
-       alt="Image" 
-       width="500">
-</a>
-<br>
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg" 
-       alt="Image" 
-       width="500">
-</a>
+<div style="display: flex; gap: 10px;">
+  <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
+    <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg" width="500">
+  </a>
+  
+  <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg">
+    <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg" width="500">
+  </a>
+</div>
 
 ## Objectif
 
