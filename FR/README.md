@@ -9,6 +9,12 @@
        alt="Image" 
        width="500">
 </a>
+<br>
+<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg">
+  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg" 
+       alt="Image" 
+       width="500">
+</a>
 
 ## Objectif
 
