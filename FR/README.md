@@ -7,12 +7,12 @@
 <div style="display: flex; gap: 10px; align-items: center;">
   <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg">
     <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Menu_fr.jpg"
-         style="height: 300px; width: auto;">
+         style="height: 500px; width: auto;">
   </a>
 
   <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg">
     <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Partial_report_fr.jpg"
-         style="height: 300px; width: auto;">
+         style="height: 500px; width: auto;">
   </a>
 </div>
 
