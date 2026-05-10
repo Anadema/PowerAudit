@@ -1,4 +1,4 @@
-# PowerAudit 3.0
+# PowerAudit 3.2
 
 > **Windows configuration audit and security review tool — for ethical and defensive use only.**
 
