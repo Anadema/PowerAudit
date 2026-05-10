@@ -1,4 +1,4 @@
-# PowerAudit 3.0
+# PowerAudit 3.2
 
 > **Outil de relevé de configuration et d'audit de sécurité Windows — usage éthique et défensif uniquement.**
 
@@ -24,6 +24,8 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 
 ---
 
+<img width="1347" height="753" alt="image" src="https://github.com/user-attachments/assets/a6c06a1a-0c6e-4300-a86c-fb617e517453" />
+
 ### Dashboard
 
 <a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
@@ -31,6 +33,9 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
        alt="Image" 
        width="800">
 </a>
+
+
+
 
 ### Matrice Mitre
 
