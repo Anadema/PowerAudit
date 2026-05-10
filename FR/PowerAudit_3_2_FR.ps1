@@ -6609,7 +6609,7 @@ function Show-Banner {
     Write-Host ""
     Write-Host "                          P O W E R A U D I T" -ForegroundColor White
     Write-Host ""
-    Write-Host "              A U D I T   --   v 3 . 0   --   B l u e T e a m" -ForegroundColor DarkCyan
+    Write-Host "              A U D I T   --   v 3 . 2   --   Anadem" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  ======================================================================" -ForegroundColor DarkCyan
     Write-Host ""
