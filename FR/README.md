@@ -28,11 +28,8 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 
 ### Dashboard
 
-<a href="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg">
-  <img src="https://raw.githubusercontent.com/Anadema/PowerAudit/refs/heads/main/Image/Dashboard_fr.jpg" 
-       alt="Image" 
-       width="800">
-</a>
+<img width="1363" height="764" alt="image" src="https://github.com/user-attachments/assets/fb0b0ef5-26cc-4805-a528-080995915fcd" />
+
 
 
 
