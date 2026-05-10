@@ -26,6 +26,9 @@ Le script ne contient **aucune commande d'écriture, de modification ou d'exploi
 
 <img width="1347" height="753" alt="image" src="https://github.com/user-attachments/assets/a6c06a1a-0c6e-4300-a86c-fb617e517453" />
 
+<img width="1339" height="599" alt="image" src="https://github.com/user-attachments/assets/7122c63c-fd4f-4d86-8f70-289fc673c578" />
+
+
 ### Dashboard
 
 <img width="1363" height="764" alt="image" src="https://github.com/user-attachments/assets/fb0b0ef5-26cc-4805-a528-080995915fcd" />
