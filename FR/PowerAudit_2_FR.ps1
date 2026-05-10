@@ -1,6 +1,6 @@
 ########################################################################
 #                                                                      #
-#        PowerAudit_3.0.ps1 / Windows Configuration Audit              #
+#        PowerAudit_2-0_FR.ps1 / Windows Configuration Audit              #
 #                                                                      #
 #        License : Apache 2                                            #
 #        Authors : BlueTeam - v3.0                                     #
