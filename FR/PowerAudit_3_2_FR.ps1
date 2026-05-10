@@ -1,38 +1,38 @@
-﻿########################################################################
+########################################################################
 #                                                                      #
-#        PowerAudit_3.2.ps1 / Audit de configuration Windows (FR)                 #
+#        PowerAudit_3.2.ps1 / Audit de configuration Windows (FR)      #
 #                                                                      #
 #        License : Apache 2                                            #
-#        Auteurs : BlueTeam - v3.2                                     #
+#        Auteurs : Anadem                                              #
 #                                                                      #
 ########################################################################
 
 
-########################################################################
-#                                                                      #
-#  UTILISATION — DROITS ADMINISTRATEUR REQUIS                         #
-#                                                                      #
-#  Ce script nécessite des droits Administrateur pour accéder à certaines  #
-#  informations système (journaux de sécurité, stratégie locale, GPO, etc.).     #
-#                                                                      #
-#  OPTION 1 — Modifier la politique d'exécution (recommandé, persistant)        #
-#    Ouvrez PowerShell en tant qu'Administrateur, puis exécutez :                       #
-#      Set-ExecutionPolicy RemoteSigned -Scope LocalMachine            #
-#    Puis lancez le script normalement :                                  #
-#      powershell.exe -File ".\PowerAudit_3_2_FR.ps1"                #
-#                                                                      #
-#  OPTION 2 — Contournement unique (sans modification permanente)             #
-#      powershell.exe -ExecutionPolicy Bypass `                        #
-#                     -File ".\PowerAudit_3_2_FR.ps1"                #
-#                                                                      #
-#  Dans les deux cas, PowerShell doit être lancé en Administrateur         #
-#  (clic droit → Exécuter en tant qu'administrateur).                              #
-#                                                                      #
-#  PRÉREQUIS MINIMAUX                                                #
-#    - Windows 10 / Windows Server 2016 ou version ultérieure                      #
-#    - PowerShell 5.0 minimum                                          #
-#                                                                      #
-########################################################################
+#############################################################################
+#                                                                           #
+#  UTILISATION — DROITS ADMINISTRATEUR REQUIS                               #
+#                                                                           #
+#  Ce script nécessite des droits Administrateur pour accéder à certaines   #
+#  informations système (journaux de sécurité, stratégie locale, GPO, etc.).#
+#                                                                           #
+#  OPTION 1 — Modifier la politique d'exécution (recommandé, persistant)    #
+#    Ouvrez PowerShell en tant qu'Administrateur, puis exécutez :           #
+#      Set-ExecutionPolicy RemoteSigned -Scope LocalMachine                 #
+#    Puis lancez le script normalement :                                    #
+#      powershell.exe -File ".\PowerAudit_3_2_FR.ps1"                       #
+#                                                                           #
+#  OPTION 2 — Contournement unique (sans modification permanente)           #
+#      powershell.exe -ExecutionPolicy Bypass `                             #
+#                     -File ".\PowerAudit_3_2_FR.ps1"                       #
+#                                                                           #
+#  Dans les deux cas, PowerShell doit être lancé en Administrateur          #
+#  (clic droit → Exécuter en tant qu'administrateur).                       #
+#                                                                           #
+#  PRÉREQUIS MINIMAUX                                                       #
+#    - Windows 10 / Windows Server 2016 ou version ultérieure               #
+#    - PowerShell 5.0 minimum                                               #
+#                                                                           #
+#############################################################################
 
 #Requires -Version 5.0
 
