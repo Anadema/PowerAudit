@@ -80,7 +80,7 @@ powershell.exe -File ".\PowerAudit_3_1.ps1"
 
 **Option 2 — Bypass ponctuel (sans modification système)**
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1.ps1"
+powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2.ps1"
 ```
 
 > Dans les deux cas, PowerShell doit être lancé **en tant qu'Administrateur** (clic droit → Exécuter en tant qu'administrateur).
@@ -95,7 +95,7 @@ powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1.ps1"
 ## Lancement
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1.ps1"
+powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2.ps1"
 ```
 
 ---
@@ -256,4 +256,4 @@ Apache 2.0 — voir fichier `LICENSE`.
 
 ## Auteurs
 
-Anadema
+Anadem
