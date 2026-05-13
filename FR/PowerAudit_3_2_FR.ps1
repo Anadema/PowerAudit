@@ -1,38 +1,38 @@
-########################################################################
+﻿########################################################################
 #                                                                      #
-#        PowerAudit_3.2.ps1 / Audit de configuration Windows (FR)      #
+#        PowerAudit_3.2.ps1 / Audit de configuration Windows (FR)                 #
 #                                                                      #
 #        License : Apache 2                                            #
-#        Auteurs : Anadem                                              #
+#        Auteurs : BlueTeam - v3.2                                     #
 #                                                                      #
 ########################################################################
 
 
-#############################################################################
-#                                                                           #
-#  UTILISATION — DROITS ADMINISTRATEUR REQUIS                               #
-#                                                                           #
-#  Ce script nécessite des droits Administrateur pour accéder à certaines   #
-#  informations système (journaux de sécurité, stratégie locale, GPO, etc.).#
-#                                                                           #
-#  OPTION 1 — Modifier la politique d'exécution (recommandé, persistant)    #
-#    Ouvrez PowerShell en tant qu'Administrateur, puis exécutez :           #
-#      Set-ExecutionPolicy RemoteSigned -Scope LocalMachine                 #
-#    Puis lancez le script normalement :                                    #
-#      powershell.exe -File ".\PowerAudit_3_2_FR.ps1"                       #
-#                                                                           #
-#  OPTION 2 — Contournement unique (sans modification permanente)           #
-#      powershell.exe -ExecutionPolicy Bypass `                             #
-#                     -File ".\PowerAudit_3_2_FR.ps1"                       #
-#                                                                           #
-#  Dans les deux cas, PowerShell doit être lancé en Administrateur          #
-#  (clic droit → Exécuter en tant qu'administrateur).                       #
-#                                                                           #
-#  PRÉREQUIS MINIMAUX                                                       #
-#    - Windows 10 / Windows Server 2016 ou version ultérieure               #
-#    - PowerShell 5.0 minimum                                               #
-#                                                                           #
-#############################################################################
+########################################################################
+#                                                                      #
+#  UTILISATION — DROITS ADMINISTRATEUR REQUIS                         #
+#                                                                      #
+#  Ce script nécessite des droits Administrateur pour accéder à certaines  #
+#  informations système (journaux de sécurité, stratégie locale, GPO, etc.).     #
+#                                                                      #
+#  OPTION 1 — Modifier la politique d'exécution (recommandé, persistant)        #
+#    Ouvrez PowerShell en tant qu'Administrateur, puis exécutez :                       #
+#      Set-ExecutionPolicy RemoteSigned -Scope LocalMachine            #
+#    Puis lancez le script normalement :                                  #
+#      powershell.exe -File ".\PowerAudit_3_2_FR.ps1"                #
+#                                                                      #
+#  OPTION 2 — Contournement unique (sans modification permanente)             #
+#      powershell.exe -ExecutionPolicy Bypass `                        #
+#                     -File ".\PowerAudit_3_2_FR.ps1"                #
+#                                                                      #
+#  Dans les deux cas, PowerShell doit être lancé en Administrateur         #
+#  (clic droit → Exécuter en tant qu'administrateur).                              #
+#                                                                      #
+#  PRÉREQUIS MINIMAUX                                                #
+#    - Windows 10 / Windows Server 2016 ou version ultérieure                      #
+#    - PowerShell 5.0 minimum                                          #
+#                                                                      #
+########################################################################
 
 #Requires -Version 5.0
 
@@ -197,7 +197,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "02" = @{
-        Name       = "Système d'exploitation"
+        Name       = "OS Windows"
         ShortName  = "OS"
         Category   = "Système"
         Conseil    = "[INFO] Vérifier la version et le build Windows. Un système obsolète est exposé aux CVE publiques (ex. EternalBlue MS17-010 sur Win7/2008 non patché). Vérifier que la machine n'est pas en fin de vie (EOL) : Windows 7/8/2008 ne reçoivent plus de correctifs. Un uptime très long (>30j) peut indiquer des mises à jour en attente. [MENACE : exploitation de CVE connues, ransomwares, vers]"
@@ -235,7 +235,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "03" = @{
-        Name       = "Variables d'environnement"
+        Name       = "Var. environnement"
         ShortName  = "ENV"
         Category   = "Système"
         Conseil    = "[INFO] Vérifier les variables d'environnement pour des entrées PATH suspectes (ex. dossier utilisateur avant System32 = DLL hijacking). Vérifier TEMP/TMP : les malwares écrivent et s'exécutent souvent depuis ces dossiers. Une variable COMSPEC ou PATHEXT modifiée peut indiquer une persistance ou une compromission. [MENACE : DLL hijacking, exécution depuis TEMP, variables détournées]"
@@ -252,8 +252,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "04" = @{
-        Name       = "Arbre des processus"
-        ShortName  = "PROC-TREE"
+        Name       = "Arbre processus"
+        ShortName  = "PROC-T"
         Category   = "Processus"
         Conseil    = "[IMPORTANT] Analyser la hiérarchie parent/enfant des processus. Typical anomalies: cmd.exe or powershell.exe child of word.exe/excel.exe (macro suspecte), svchost.exe launched by a process other than services.exe, explorer.exe with unexpected children. A system process (lsass, winlogon) with an unusual parent indicates injection. [THREAT: Office macros, process hollowing, code injection, RAT]"
         HtmlAnchor = "arbps"
@@ -266,8 +266,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "05" = @{
-        Name       = "Liste des processus"
-        ShortName  = "PROC-LIST"
+        Name       = "Processus actifs"
+        ShortName  = "PROC-L"
         Category   = "Processus"
         Conseil    = "[IMPORTANT] Vérifier les processus avec une utilisation CPU/RAM anormale (crypto-mineur). Rechercher des noms imitant des processus système légitimes (svchost32.exe, lsass_.exe, svch0st.exe). Un processus sans chemin (Path vide) peut indiquer du code injecté en mémoire. Vérifier les processus s'exécutant depuis %TEMP%, %APPDATA% ou %PUBLIC%. [MENACE : crypto-mineurs, RAT, injection de processus]"
         HtmlAnchor = "lstps"
@@ -287,8 +287,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "06" = @{
-        Name       = "Politique PowerShell"
-        ShortName  = "EXEC-POL"
+        Name       = "ExecPolicy PS"
+        ShortName  = "EXEC-P"
         Category   = "Sécurité"
         Conseil    = "[CRITIQUE] Bypass et Unrestricted permettent à tout script PS de s'exécuter sans restriction. Recommended policy is RemoteSigned or AllSigned. An attacker can bypass the policy with powershell.exe -ExecutionPolicy Bypass -File malware.ps1: this policy alone is not a sufficient security barrier, but a permissive value indicates poor hygiene or past compromise. [THREAT: Suspicious script execution, fileless malware, PS-Emp1re/Invoke-Mimi-katz]"
         HtmlAnchor = "polpws"
@@ -394,7 +394,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "10" = @{
-        Name       = "Partages réseau"
+        Name       = "Partages SMB"
         ShortName  = "SHARES"
         Category   = "Réseau"
         Conseil    = "[CRITIQUE] Les partages administratifs (C$, D$, ADMIN$, IPC$) sont des vecteurs de mouvement latéral massivement utilisés par les ransomwares (WannaCry, NotPetya). Les désactiver sauf besoin spécifique. Les partages réseau doivent être restreints aux utilisateurs strictement nécessaires. [MENACE : mouvement latéral, exfiltration, ransomwares]"
@@ -432,7 +432,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "12" = @{
-        Name       = "Partitions / Disques"
+        Name       = "Disques"
         ShortName  = "DISK"
         Category   = "Système"
         Conseil    = "[INFO] Un espace disque inférieur à 10% peut indiquer une collecte massive de données par un malware ou une exfiltration active. Vérifier les partitions cachées ou inexpliquées. [MENACE : exfiltration de données, staging ransomware]"
@@ -458,7 +458,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "13" = @{
-        Name       = "Configuration réseau"
+        Name       = "Config. réseau"
         ShortName  = "IPCONFIG"
         Category   = "Réseau"
         Conseil    = "[IMPORTANT] Vérifier que les serveurs DNS configurés appartiennent à l'organisation ou à des fournisseurs connus. Un DNS modifié (ex. 8.8.8.8 remplacé par une IP inconnue) peut indiquer un DNS hijacking. Plusieurs IP sur une même interface peuvent signaler un tunnel ou un proxy. Une adresse APIPA (169.254.x.x) indique un problème DHCP. Vérifier les interfaces virtuelles non documentées (VPN, Tor, tunnel). [MENACE : DNS hijacking, C2 via DNS, tunnel réseau, pivot]"
@@ -501,7 +501,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "15" = @{
-        Name       = "Table de routage"
+        Name       = "Table routage"
         ShortName  = "ROUTE"
         Category   = "Réseau"
         Conseil    = "[IMPORTANT] Une route par défaut inattendue peut rediriger tout le trafic vers un proxy suspect. Des routes statiques ajoutées vers des sous-réseaux internes peuvent indiquer une cartographie réseau. [MENACE : interception du trafic, préparation au mouvement latéral]"
@@ -515,7 +515,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "16" = @{
-        Name       = "Source MAJ (WSUS)"
+        Name       = "Source WSUS"
         ShortName  = "WSUS"
         Category   = "MAJ"
         Conseil    = "[IMPORTANT] Si un serveur WSUS est configuré, vérifier qu'il s'agit d'un serveur interne connu. A hijacked WSUS (WSUS-pect attack) allows an attacker to distribute fake signed updates to all domain machines, leading to full infrastructure compromise. If no WSUS is configured, verify that automatic Windows Update is enabled. [THREAT: WSUS-pect, fake updates, full infrastructure compromise via WSUS]"
@@ -550,7 +550,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "18" = @{
-        Name       = "Source de temps (NTP)"
+        Name       = "Source NTP"
         ShortName  = "NTP"
         Category   = "Réseau"
         Conseil    = "[INFO] Une grande dérive temporelle (>5 min) peut indiquer une manipulation de l'horloge pour falsifier les journaux et complicate forensic analysis. An unauthorized external NTP server may signal a suspicious reconfiguration. In an AD domain, all machines should sync to the DC (W32TM /query /source). Time consistency is critical for event correlation in a SIEM. [THREAT: Anti-forensics, log tampering, Kerberos certificate invalidation]"
@@ -567,28 +567,120 @@ $Global:AuditModules = [ordered]@{
     }
 
     "19" = @{
-        Name       = "Configuration Wi-Fi"
+        Name       = "Profils Wi-Fi"
         ShortName  = "WIFI"
         Category   = "Réseau"
         Conseil    = "[IMPORTANT] S'assurer que la machine ne se connecte pas automatiquement aux réseaux Wi-Fi ouverts (evil twin, rogue AP). Les profils Wi-Fi stockés contiennent des mots de passe récupérables via : netsh wlan show profile <nom> key=clear. Un adaptateur Wi-Fi en mode Monitor ou AP peut indiquer un outil de scan/pivot réseau. Désactiver le Wi-Fi sur les postes fixes en environnement sensible. [MENACE : evil twin, vol de credentials Wi-Fi, rogue AP, pivot sans-fil]"
         HtmlAnchor = "wifi"
         Script     = {
-            Write-SectionHeader "WI-FI CONFIGURATION"
-            $result = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show all") 2>&1
-            $result | ForEach-Object {
-                $line  = $_
-                $color = "Gray"
-                if ($line -match "SSID|Profil")                   { $color = "Yellow" }
-                elseif ($line -match "Authentication|Encryption") { $color = "Cyan" }
-                Write-Host "  $line" -ForegroundColor $color
+            Write-SectionHeader "CONFIGURATION WI-FI"
+            $output = New-Object System.Collections.ArrayList
+
+            # 1. Liste des interfaces Wi-Fi
+            Write-Host ""
+            Write-Host "  -- INTERFACES WI-FI --" -ForegroundColor Yellow
+            $null = $output.Add("-- INTERFACES WI-FI --")
+            $interfaces = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show interfaces") 2>&1
+            foreach ($line in $interfaces) {
+                Write-Host "  $line" -ForegroundColor Gray
+                $null = $output.Add($line)
             }
-            return ($result -join "`n")
+
+            # 2. Liste des profils
+            Write-Host ""
+            Write-Host "  -- PROFILS Wi-Fi SAUVEGARDES --" -ForegroundColor Yellow
+            $null = $output.Add("")
+            $null = $output.Add("-- PROFILS Wi-Fi SAUVEGARDES --")
+
+            $profilesRaw = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show profiles") 2>&1
+            $profileNames = @()
+            foreach ($line in $profilesRaw) {
+                # Format: "All User Profile : <name>" or "Profil Tous les utilisateurs : <name>"
+                if ($line -match "(?:All User Profile|Profil Tous les utilisateurs|Profil tous les utilisateurs)\s*:\s*(.+)$") {
+                    $profileNames += $matches[1].Trim()
+                }
+            }
+
+            if ($profileNames.Count -eq 0) {
+                Write-Host "  Aucun profil Wi-Fi sauvegarde sur cette machine." -ForegroundColor Gray
+                $null = $output.Add("Aucun profil Wi-Fi sauvegarde sur cette machine.")
+            } else {
+                Write-Host "  $($profileNames.Count) profil(s) trouve(s)" -ForegroundColor Cyan
+                $null = $output.Add("$($profileNames.Count) profil(s) trouve(s)")
+                Write-Host ""
+
+                # 3. Pour chaque profil : afficher SSID, securite, et MOT DE PASSE (key=clear)
+                foreach ($name in $profileNames) {
+                    Write-Host ("  +" + ("-" * 70)) -ForegroundColor DarkCyan
+                    Write-Host "  | PROFIL : $name" -ForegroundColor Yellow
+                    $null = $output.Add("")
+                    $null = $output.Add("PROFIL : $name")
+
+                    $detail = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show profile name=`"$name`" key=clear") 2>&1
+                    $auth = ""
+                    $cipher = ""
+                    $key = ""
+                    $autoConn = ""
+
+                    foreach ($line in $detail) {
+                        if ($line -match "(?:Authentication|Authentification)\s*:\s*(.+)$") {
+                            $auth = $matches[1].Trim()
+                        }
+                        if ($line -match "(?:Cipher|Chiffrement)\s*:\s*(.+)$") {
+                            $cipher = $matches[1].Trim()
+                        }
+                        if ($line -match "(?:Key Content|Contenu de la cl)\D*:\s*(.+)$") {
+                            $key = $matches[1].Trim()
+                        }
+                        if ($line -match "(?:Connection mode|Mode de connexion)\s*:\s*(.+)$") {
+                            $autoConn = $matches[1].Trim()
+                        }
+                    }
+
+                    # Affichage formate
+                    $authColor = "Gray"
+                    if ($auth -match "(?i)open|ouvert|WEP") { $authColor = "Red" }
+                    elseif ($auth -match "(?i)WPA3") { $authColor = "Green" }
+                    elseif ($auth -match "(?i)WPA2") { $authColor = "Cyan" }
+                    elseif ($auth -match "(?i)WPA[^23]") { $authColor = "Yellow" }
+
+                    Write-Host "  |   Authentification : " -NoNewline -ForegroundColor Gray
+                    Write-Host "$auth" -ForegroundColor $authColor
+                    $null = $output.Add("  Authentification : $auth")
+
+                    if ($cipher) {
+                        Write-Host "  |   Chiffrement      : $cipher" -ForegroundColor Gray
+                        $null = $output.Add("  Chiffrement      : $cipher")
+                    }
+                    if ($autoConn) {
+                        $autoCol = if ($autoConn -match "(?i)auto") { "Yellow" } else { "Gray" }
+                        Write-Host "  |   Connexion auto.  : $autoConn" -ForegroundColor $autoCol
+                        $null = $output.Add("  Connexion auto.  : $autoConn")
+                    }
+                    if ($key) {
+                        Write-Host "  |   Mot de passe     : " -NoNewline -ForegroundColor Gray
+                        Write-Host "$key" -ForegroundColor Magenta
+                        $null = $output.Add("  Mot de passe     : $key")
+                    } else {
+                        if ($auth -match "(?i)open|ouvert") {
+                            Write-Host "  |   Mot de passe     : (reseau ouvert - aucun)" -ForegroundColor DarkGray
+                            $null = $output.Add("  Mot de passe     : (reseau ouvert - aucun)")
+                        } else {
+                            Write-Host "  |   Mot de passe     : (non recuperable - 802.1X / Enterprise ?)" -ForegroundColor DarkGray
+                            $null = $output.Add("  Mot de passe     : (non recuperable)")
+                        }
+                    }
+                    Write-Host ("  +" + ("-" * 70)) -ForegroundColor DarkCyan
+                }
+            }
+
+            return ($output -join "`n")
         }
     }
 
     "20" = @{
         Name       = "Cache DNS"
-        ShortName  = "DNS-CACHE"
+        ShortName  = "DNS-C"
         Category   = "Réseau"
         Conseil    = "[IMPORTANT] Le cache DNS révèle les domaines récemment contactés par la machine. Rechercher les domaines suspects : DGA (noms aléatoires comme 'xk2j9qa.net'), TLD inhabituels, domaines C2 internes. [MENACE : communication C2, exfiltration, balisation malware]"
         HtmlAnchor = "dns"
@@ -620,7 +712,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "21" = @{
-        Name       = "Configuration proxy"
+        Name       = "Proxy"
         ShortName  = "PROXY"
         Category   = "Réseau"
         Conseil    = "[IMPORTANT] Un proxy configure a l'insu de l'utilisateur (ProxyEnable=1 avec IP inconnue) permet l'interceptation de tout le trafic HTTP/HTTPS (MITM). AutoConfigURL pointant vers un PAC file externe est un vecteur de redirection de trafic. Certains logiciel-suspects (ex: Trick-Bot, Emo-tet) modifient les parametres proxy pour exfiltrer des donnees ou intercepter des credentials. Verifier egalement HKLM en plus de HKCU car les deux peuvent etre utilises. [MENACE: MITM, interception HTTPS, exfiltration via proxy, vol de credentials]"
@@ -677,7 +769,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "24" = @{
-        Name       = "État des services"
+        Name       = "Services"
         ShortName  = "SERVICES"
         Category   = "Services"
         Conseil    = "[IMPORTANT] Reduire la surface d'attaque en desactivant les services inutiles : Spooler d'impression (si pas d'imprimante - vecteur Print-Nightmare), WinRM (si pas d'administration a distance - vecteur lateral), Telnet, FTP, SNMP (protocoles non chiffres). Un service avec un chemin sans guillemets contenant des espaces est vulnerable au Unquoted Service Path (privilege escalation). Verifier les services avec des binaires dans %TEMP% ou %APPDATA%. [MENACE: Print-Nightmare, unquoted path, service suspect, persistence]"
@@ -698,8 +790,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "25" = @{
-        Name       = "Pare-feu - état"
-        ShortName  = "FW-STATE"
+        Name       = "Pare-feu (état)"
+        ShortName  = "FW-ST"
         Category   = "Pare-feu"
         Conseil    = "[CRITIQUE] Le pare-feu doit être actif sur les trois profils (Domaine, Privé, Public). A disabled firewall on the Public profile is a serious fault (unfiltered connections on unknown network). Le profil Domain est souvent plus permissif : vérifiezerify that Public/Private is more restrictive. A disabled firewall may result from compromise (malware disabling protection) or poor administrative practice. [THREAT: Unfiltered connections, port scanning, direct exploitation of exposed services]"
         HtmlAnchor = "conffw"
@@ -719,7 +811,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "26" = @{
-        Name       = "Pare-feu - règles entrantes"
+        Name       = "Pare-feu (entrée)"
         ShortName  = "FW-IN"
         Category   = "Pare-feu"
         Conseil    = "[IMPORTANT] Verifier les regles autorisant des connexions entrantes sur des ports sensibles : RDP (3389) depuis Any (risque brute-force/Blue-Keep), WinRM (5985/5986) depuis Any (risque lateral), SMB (445) depuis Any (risque Eternal-Blue/ransom-ware). Un nombre de regles superieur a 200 indique generalement une accumulation non maitrisee. Les regles sans nom explicite ou avec des noms generiques sont suspectes. Privilegier des regles avec des IPs sources specifiques plutot que Any. [MENACE: RDP brute-force, Blue-Keep, Eternal-Blue, acces non autorise]"
@@ -739,7 +831,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "27" = @{
-        Name       = "Pare-feu - règles sortantes"
+        Name       = "Pare-feu (sortie)"
         ShortName  = "FW-OUT"
         Category   = "Pare-feu"
         Conseil    = "[INFO] Les règles sortantes sont souvent négligées mais critiques pour la défense en profondeur. Un pare-feu bloquant le trafic sortant par défaut stoppe la communication C2, le mouvement latéral et l'exfiltration. [MENACE : C2 via ports légitimes (80, 443, 53), exfiltration]"
@@ -759,7 +851,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "28" = @{
-        Name       = "Antivirus"
+        Name       = "Antivirus / EDR"
         ShortName  = "AV"
         Category   = "Sécurité"
         Conseil    = "[CRITIQUE] L'antivirus doit être actif (Protection en temps réel = Activée) et à jour. Des signatures de plus de 7 jours ne détectent plus les menaces récentes. Un AV désactivé est un signal fort d'infection active. [MENACE : contournement de toute détection réseau]"
@@ -805,7 +897,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "30" = @{
-        Name       = "Logiciels installés"
+        Name       = "Logiciels"
         ShortName  = "APPS"
         Category   = "Système"
         Conseil    = "[IMPORTANT] Vérifier les logiciels non autorisés : outils d'administration à distance (AnyDesk, TeamViewer, RustDesk) installés sans approbation IT, outils de pentest (Nmap, Wireshark, Msf-framework), crypto-mineurs. Vérifier les versions : Java, Adobe Reader, navigateurs et Office obsolètes sont de grands vecteurs d'exploitation. Les logiciels installés récemment (date proche d'un incident) doivent être investigués en priorité. [MENACE : RAT déguisé en outil légitime, exploitation de logiciels obsolètes, crypto-mineur]"
@@ -864,7 +956,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "32" = @{
-        Name     = "Journal Application (50 derniers)"
+        Name     = "Journal App."
         ShortName  = "EVT-APP"
         Category   = "Journaux"
         Conseil    = "[INFO] Les erreurs applicatives répétitives peuvent indiquer un logiciel instable (boucle de crash). Vérifier les erreurs de processus inconnus ou de Microsoft Office (possible exploitation de macros). Les événements 1000/1001 d'applications inconnues peuvent être des artefacts post-exploitation. [MENACE : exploitation via crash, détection d'activité post-exploitation]"
@@ -895,7 +987,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "33" = @{
-        Name       = "Stratégie de groupe"
+        Name       = "GPO"
         ShortName  = "GPO"
         Category   = "Sécurité"
         Conseil    = "[IMPORTANT] Vérifier que les GPO de sécurité attendues sont appliquées : politique de mots de passe, restriction logiciels (SRP/AppLocker), désactivation des macros Office, blocage des périphériques amovibles, configuration du pare-feu. Des GPO non appliquées (RSoP vide) peuvent indiquer une rupture de lien AD ou une manipulation. Vérifier que les GPO ne contiennent pas de scripts de démarrage ou d'ouverture de session non documentés. [MENACE : contournement des politiques de sécurité, persistance via GPO, mouvement latéral AD]"
@@ -976,7 +1068,7 @@ $Global:AuditModules = [ordered]@{
 
     "36" = @{
         Name       = "BitLocker"
-        ShortName  = "BITLOCKER"
+        ShortName  = "BITLCK"
         Category   = "Chiffrement"
         Conseil    = "[CRITIQUE] Tous les postes mobiles doivent avoir BitLocker actif sur C:. Un disque non chiffré permet la lecture directe des données si la machine est volée physiquement ou démarrée depuis un média externe. [MENACE : vol physique de données, attaque cold boot]"
         HtmlAnchor = "bitlocker"
@@ -1009,7 +1101,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "37" = @{
-        Name       = "Certificats système"
+        Name       = "Certificats"
         ShortName  = "CERTS"
         Category   = "Chiffrement"
         Conseil    = "[IMPORTANT] Vérifier les certificats racines inconnus dans Cert:\\LocalMachine\\Root : un certificat racine malveillant permet l'interception HTTPS transparente (MITM sur tout le trafic TLS). Vérifier les certificats expirés qui peuvent bloquer des services. Les certificats auto-signés dans le magasin de confiance sont suspects en environnement d'entreprise. [MENACE : interception TLS/HTTPS, MITM via faux certificat racine, espionnage réseau]"
@@ -1082,8 +1174,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "39" = @{
-        Name    = "Fichiers récemment modifiés (72h)"
-        ShortName  = "RECENT-FILES"
+        Name    = "Fichiers récents 72h"
+        ShortName  = "RECENT"
         Category   = "Forensique"
         Conseil    = "[IMPORTANT] Des fichiers récemment modifiés dans des dossiers sensibles peuvent indiquer une activité suspecte. Vérifier les modifications dans : System32, dossiers de démarrage, extensions navigateur. Les fichiers modifiés en dehors des heures de travail sont particulièrement suspects. [MENACE : installation de malware, persistance, préparation d'exfiltration]"
         HtmlAnchor = "recentfiles"
@@ -1130,7 +1222,7 @@ $Global:AuditModules = [ordered]@{
 
     "40" = @{
         Name = "Historique RDP"
-        ShortName  = "RDP-HIST"
+        ShortName  = "RDP-H"
         Category   = "Forensique"
         Conseil    = "[IMPORTANT] L'historique RDP revele les serveurs auxquels l'utilisateur s'est connecte et les utilisateurs qui se sont connectes en RDP sur ce poste. Des connexions vers des IPs inconnues peuvent indiquer un mouvement lateral. Des connexions depuis des IPs externes non attendues peuvent indiquer une compromission de credentials RDP. [MENACE: Mouvement lateral RDP, acces non autorise, compromission de credentials]"
         HtmlAnchor = "rdphist"
@@ -1184,8 +1276,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "41" = @{
-        Name       = "Historique PowerShell"
-        ShortName  = "PS-HIST"
+        Name       = "Historique PS"
+        ShortName  = "PS-H"
         Category   = "Forensique"
         Conseil    = "[CRITIQUE] L'historique PowerShell contient les commandes récemment exécutées. Les commandes encodéesnds (base64), calls to Download-String/Web-Client/Invoke-Expr, network connections from PS (New-Object Net.Web-Client) are strong indicators of suspicious activity or fileless attack. PS history can also be cleared by an attacker: its complete absence is suspicious. [THREAT: Fileless attack, payload download, remote execution via PS]"
         HtmlAnchor = "pshist"
@@ -1275,8 +1367,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "43" = @{
-        Name       = "AppLocker / SRP"
-        ShortName  = "APPLOCKER"
+        Name       = "AppLocker"
+        ShortName  = "APPLCK"
         Category   = "Vulnérabilités"
         Conseil    = "[IMPORTANT] AppLocker et les SRP limitent l'exécution aux programmes autorisésized executables. Without these, any user can run any binary, PS script, VBS, or HTA. AppLocker should block execution from TEMP, APPDATA, et user folders. Absence of AppLocker rules on a sensitive machine is a major security gap. [THREAT: Payload execution, LOLBins, unauthorized scripts, AV bypass]"
         HtmlAnchor = "applocker"
@@ -1335,7 +1427,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "44" = @{
-        Name = "Credential Guard / Protection LSA"
+        Name = "Protection LSA"
         ShortName  = "LSAPROT"
         Category   = "Vulnérabilités"
         Conseil    = "[CRITIQUE] La protection LSA (RunAsPPL) empêche la lecture de la mémoire lsass.exetial theft tools. Without this protection, Mimi-katz can extract hashes et cleartext passwords from lsass in seconds. Credential Guard isolates credentials in a virtualized environment. Both protections are essential on any administrator workstation. [THREAT: Credential theft from lsass, pass-the-h4sh, pass-the-t1cket]"
@@ -1385,7 +1477,7 @@ $Global:AuditModules = [ordered]@{
     }
 
     "45" = @{
-        Name = "Connexions établies - GéoIP"
+        Name = "Connexions GeoIP"
         ShortName  = "NET-GEO"
         Category   = "Vulnérabilités"
         Conseil    = "[IMPORTANT] Verifier les connexions ESTABLISHED vers des IPs etrangeres ou des plages IP inhabituelles. Les connexions vers des hebergeurs cloud inconnus (AS non reconnus) peuvent indiquer un C2. Des connexions persistantes vers des pays avec lesquels l'organisation n'a pas de relation d'affaires sont suspectes. Croiser les IPs avec des bases de reputation (AbuseIPDB, VirusTotal). [MENACE: C2, exfiltration de donnees, communication avec infrastructure hostile]"
@@ -1430,8 +1522,8 @@ $Global:AuditModules = [ordered]@{
     }
 
     "46" = @{
-        Name     = "Modules PowerShell chargés"
-        ShortName  = "PS-MODULES"
+        Name     = "Modules PS"
+        ShortName  = "PS-MOD"
         Category   = "Vulnérabilités"
         Conseil    = "[IMPORTANT] Verifier les modules PS charges dans la session courante. Des modules inconnus ou non signes peuvent avoir ete importes par un attaquant. Verifier aussi les modules installes dans les chemins non standard (hors C:\Windows\System32\WindowsPowerShell). Les modules avec des fonctions comme Invoke-*, Get-Hash*, Out-Minidump sont caracteristiques des boites a outils offensives. [MENACE: Outils offensifs charges en memoire, persistance via module PS, attaque sans-fichier]"
         HtmlAnchor = "psmodules"
@@ -5277,10 +5369,10 @@ body.light .cyber-cover { background:linear-gradient(135deg,#0a0f1e 0%,#0d1a2e 4
 </div><!-- /#guide-panel -->
 
 <!-- DELIVERY PANEL -->
-<div id="delivery-panel" role="dialog" aria-label="Audit Report">
+<div id="delivery-panel" role="dialog" aria-label="Rapport d'audit">
   <div class="delivery-inner">
     <div class="delivery-header">
-      <div><h1>RAPPORT</h1><p>Full audit report — findings, remediations et raw logs.</p></div>
+      <div><h1>RAPPORT</h1><p>Rapport d'audit complet — constats, remédiations et journaux bruts.</p></div>
       <div class="delivery-header-actions">
         <button id="delivery-pdf-btn" onclick="exportDeliveryPDF()">&#128438; Exporter PDF</button>
         <button class="delivery-close" onclick="toggleDelivery()">&#10005; Fermer</button>
@@ -6609,7 +6701,7 @@ function Show-Banner {
     Write-Host ""
     Write-Host "                          P O W E R A U D I T" -ForegroundColor White
     Write-Host ""
-    Write-Host "              A U D I T   --   v 3 . 2   --   Anadem" -ForegroundColor DarkCyan
+    Write-Host "              A U D I T   --   v 3 . 0   --   B l u e T e a m" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  ======================================================================" -ForegroundColor DarkCyan
     Write-Host ""
@@ -6997,24 +7089,56 @@ while ($true) {
             Write-Host "  ---- RÉSEAUX WIFI SAUVEGARDÉS -----------------------------------" -ForegroundColor DarkYellow
             Write-Host ""
             try {
-                $profiles = (netsh wlan show profiles) | Select-String "Profil Tous les utilisateurs" |
-                    ForEach-Object { ($_ -split ":")[1].Trim() }
-                if (-not $profiles) {
-                    $profiles = (netsh wlan show profiles) | Select-String "All User Profile" |
-                        ForEach-Object { ($_ -split ":")[1].Trim() }
+                $rawProfiles = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show profiles") 2>&1
+                $profiles = @()
+                foreach ($line in $rawProfiles) {
+                    if ($line -match "(?:All User Profile|Profil Tous les utilisateurs|Profil tous les utilisateurs)\s*:\s*(.+)$") {
+                        $profiles += $matches[1].Trim()
+                    }
                 }
-                if ($profiles) {
+
+                if ($profiles.Count -eq 0) {
+                    Write-Host "    Aucun profil Wi-Fi sauvegardé." -ForegroundColor DarkGray
+                } else {
                     foreach ($p in $profiles) {
-                        $detail = netsh wlan show profile name="$p" key=clear 2>$null
-                        $pwd    = ($detail | Select-String "Key Content|Key Content") |
-                            ForEach-Object { ($_ -split ":")[1].Trim() }
-                        if (-not $pwd) { $pwd = "(password not available)" }
-                        Write-Host ("    SSID      : {0}" -f $p)   -ForegroundColor Cyan
-                        Write-Host ("    Mot de passe : {0}" -f $pwd) -ForegroundColor Yellow
+                        $detail = (cmd /c "chcp 65001 >nul 2>&1 & netsh wlan show profile name=`"$p`" key=clear") 2>&1
+                        $pwd  = ""
+                        $auth = ""
+                        $autoConn = ""
+                        foreach ($line in $detail) {
+                            if ($line -match "(?:Key Content|Contenu de la cl)\D*:\s*(.+)$") {
+                                $pwd = $matches[1].Trim()
+                            }
+                            if ($line -match "(?:^\s*Authentication|Authentification)\s*:\s*(.+)$") {
+                                $auth = $matches[1].Trim()
+                            }
+                            if ($line -match "(?:Connection mode|Mode de connexion)\s*:\s*(.+)$") {
+                                $autoConn = $matches[1].Trim()
+                            }
+                        }
+
+                        Write-Host ("    SSID            : {0}" -f $p) -ForegroundColor Cyan
+                        if ($auth) {
+                            $authCol = "Gray"
+                            if ($auth -match "(?i)open|ouvert|WEP") { $authCol = "Red" }
+                            elseif ($auth -match "(?i)WPA3") { $authCol = "Green" }
+                            elseif ($auth -match "(?i)WPA2") { $authCol = "DarkCyan" }
+                            elseif ($auth -match "(?i)WPA") { $authCol = "Yellow" }
+                            Write-Host ("    Sécurité        : {0}" -f $auth) -ForegroundColor $authCol
+                        }
+                        if ($autoConn) {
+                            $autoCol = if ($autoConn -match "(?i)auto") { "Yellow" } else { "DarkGray" }
+                            Write-Host ("    Connexion auto. : {0}" -f $autoConn) -ForegroundColor $autoCol
+                        }
+                        if ($pwd) {
+                            Write-Host ("    Mot de passe    : {0}" -f $pwd) -ForegroundColor Magenta
+                        } elseif ($auth -match "(?i)open|ouvert") {
+                            Write-Host  "    Mot de passe    : (réseau ouvert - aucun)" -ForegroundColor DarkGray
+                        } else {
+                            Write-Host  "    Mot de passe    : (non récupérable - 802.1X / Enterprise ?)" -ForegroundColor DarkGray
+                        }
                         Write-Host ""
                     }
-                } else {
-                    Write-Host "    Aucun profil WiFi sauvegardé." -ForegroundColor DarkGray
                 }
             } catch {
                 Write-Host "    [ERREUR] $($_.Exception.Message)" -ForegroundColor Red
