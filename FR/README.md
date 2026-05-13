@@ -260,6 +260,6 @@ Apache 2.0 — voir fichier `LICENSE`.
 
 ---
 
-## Auteurs
+## Auteur
 
 Anadem
