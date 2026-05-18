@@ -25,6 +25,10 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 
 <img width="1339" height="590" alt="image" src="https://github.com/user-attachments/assets/2fc7e761-989b-4c95-ad27-55a56f1a48db" />
 
+### Audit logs 
+
+<img width="1361" height="597" alt="image" src="https://github.com/user-attachments/assets/97461382-7ce2-44de-acba-6a841d08910c" />
+
 ### Export PDF Report
 
 <img width="1336" height="589" alt="image" src="https://github.com/user-attachments/assets/4d4d3fe2-aff2-4d2a-89be-9f5ce9febb05" />
