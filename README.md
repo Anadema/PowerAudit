@@ -10,6 +10,9 @@
        width="500">
 </a>
 
+<img width="745" height="689" alt="image" src="https://github.com/user-attachments/assets/4952ef49-ce4a-4973-84be-fdb0db632682" />
+
+
 ## Objective
 
 PowerAudit is a PowerShell script designed for **Blue Team** analysts, system administrators, and security auditors. It provides a rapid snapshot of a Windows machine's configuration, identifies deviations from security best practices, and generates an interactive HTML report ready for immediate use.
