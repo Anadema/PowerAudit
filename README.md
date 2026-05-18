@@ -10,8 +10,6 @@
        width="500">
 </a>
 
-<img width="745" height="689" alt="image" src="https://github.com/user-attachments/assets/4952ef49-ce4a-4973-84be-fdb0db632682" />
-
 
 ## Objective
 
