@@ -3688,7 +3688,7 @@ function Build-HtmlReport {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PowerAudit 3.2 FR -- $computername</title>
+<title>PowerAudit 3.2 EN -- $computername</title>
 <style>
 /* ===== RESET & VARIABLES ===== */
 :root {
