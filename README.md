@@ -210,8 +210,9 @@ The generated report is a self-contained HTML file (no external dependencies) co
 - **MITRE ATT&CK Matrix** — detected techniques are highlighted with their risk level; clicking a technique opens the official page on attack.mitre.org
 - **Remediation Plan** prioritized by criticality level
 - **Detail of each module** with raw output and security recommendations
+- ""Export PDF Report"" to store report version 
 - **Sidebar navigation** with search and filters
-- **Security references** (ANSSI, MITRE, CIS, etc.)
+- **Security references** (NIS, MITRE, CIS, LAPS, etc.)
 
 ### Security Score Calculation
 
