@@ -3,7 +3,7 @@
 #        PowerAudit_3.2.ps1 / Windows Configuration Audit (EN)         #
 #                                                                      #
 #        License : Apache 2                                            #
-#        Auteurs : BlueTeam - v3.2                                     #
+#        Auteurs : Anadem - v3.2                                       #
 #                                                                      #
 ########################################################################
 
@@ -6780,7 +6780,7 @@ function Run-Menu2 {
         Write-Host ""
 
         # --- Read the command ---
-        $cmd = Read-Host "  Votre commande"
+        $cmd = Read-Host "  Your command"
         $cmd = $cmd.Trim().TrimEnd("`r","`n"," ").TrimStart("`r","`n"," ")
 
 
