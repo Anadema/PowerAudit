@@ -77,12 +77,12 @@ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 Then launch the script normally:
 ```powershell
-powershell.exe -File ".\PowerAudit_3_1_EN.ps1"
+powershell.exe -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
 **Option 2 — One-time bypass (no system change)**
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1_EN.ps1"
+powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
 > In both cases, PowerShell must be launched **as Administrator** (right-click → Run as administrator).
@@ -97,7 +97,7 @@ powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1_EN.ps1"
 ## Usage
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_1_EN.ps1"
+powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
 ---
