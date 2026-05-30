@@ -69,7 +69,7 @@ The script requires **Administrator rights** to access certain system informatio
 
 There are two ways to run it:
 
-**Option 1 — Modify execution policy (recommended, persistent)**
+**Option 1 — Modify execution policy (not recommended because persistent)**
 
 Open PowerShell as Administrator and run:
 ```powershell
@@ -80,7 +80,7 @@ Then launch the script normally:
 powershell.exe -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
-**Option 2 — One-time bypass (no system change)**
+**Option 2 — One-time bypass (recommended, no system change)**
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
