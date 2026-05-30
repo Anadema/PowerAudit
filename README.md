@@ -67,25 +67,7 @@ The script contains **no write, modify, or exploitation commands**. It relies ex
 
 The script requires **Administrator rights** to access certain system information (security logs, local security policy, GPO, etc.).
 
-There are two ways to run it:
-
-**Option 1 — Modify execution policy (not recommended because persistent)**
-
-Open PowerShell as Administrator and run:
-```powershell
-Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
-```
-Then launch the script normally:
-```powershell
-powershell.exe -File ".\PowerAudit_3_2_EN.ps1"
-```
-
-**Option 2 — One-time bypass (recommended, no system change)**
-```powershell
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
-```
-
-> In both cases, PowerShell must be launched **as Administrator** (right-click → Run as administrator).
+> PowerShell must be launched **as Administrator** (right-click → Run as administrator).
 
 ### Minimum requirements
 
@@ -100,8 +82,10 @@ powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
-```powershell in user (to see what a user account can have access)
-powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
+```powershell in user is not possible but you can try
+
+<img width="718" height="68" alt="image" src="https://github.com/user-attachments/assets/75e092ce-7ca7-41c3-bf7e-9f2a858ef36e" />
+
 ```
 
 ---
