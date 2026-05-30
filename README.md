@@ -78,15 +78,15 @@ The script requires **Administrator rights** to access certain system informatio
 
 ## Recommended Usage
 
-```powershell in administrator (full analysis)
+Powershell in administrator (full analysis)
+```
 powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
-```powershell in user is not possible but you can try
+Powershell in user is not possible but you can try
 
 <img width="718" height="68" alt="image" src="https://github.com/user-attachments/assets/75e092ce-7ca7-41c3-bf7e-9f2a858ef36e" />
 
-```
 
 ---
 
