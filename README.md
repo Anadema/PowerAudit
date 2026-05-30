@@ -94,9 +94,13 @@ powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 
 ---
 
-## Usage
+## Recommended Usage
 
-```powershell
+```powershell in administrator (full analysis)
+powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
+```
+
+```powershell in user (to see what a user account can have access)
 powershell.exe -ExecutionPolicy Bypass -File ".\PowerAudit_3_2_EN.ps1"
 ```
 
